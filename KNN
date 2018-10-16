@@ -1,0 +1,32 @@
+#K-Nearest Neighbors
+
+import pandas as pd
+import numpy as pd
+import math
+import operator
+
+# Import data
+data = pd.read_csv("filename")
+data.head()
+
+
+# Define function which calculates Euclidean distance for two points
+def euclideanDistance(data1, data2, length):
+  distance = 0
+  for x in range(length):
+    distance += np.square(data1[x] - data2[x])
+  return np.sqrt(distance)
+  
+  # Define KNN model
+  def knn(trainingSet, testInstance, k):
+  
+    distance = {}
+    sort = {}
+    
+    length = testInstance.shape[1]
+    
+    for x in range(len(trainingSet)):
+      dist = euclideanDistance(testInstance, trainingSet.iloc[x], length)
+      distances[x] = dist[0]
+    
+    sorted_d = sorted(distances.items(), key=operator.itemgetter(1)
